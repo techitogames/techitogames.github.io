@@ -1,9 +1,19 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-title-es="Acta: Interrogatorios · Política de privacidad" data-title-en="Acta: Interrogatorios · Privacy policy">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Acta: Interrogatorios · Política de privacidad</title>
+<script>
+  // Idioma: ?lang=es|en, si no lo último elegido, si no el del navegador.
+  (function () {
+    var ok = { es: 1, en: 1 }, q = new URLSearchParams(location.search).get('lang'), s = null;
+    try { s = localStorage.getItem('lang'); } catch (e) {}
+    var l = ok[q] ? q : ok[s] ? s : (navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.lang = l;
+  })();
+</script>
 <style>
   :root { --paper: #f6f1e4; --ink: #211f1c; --faded: #736b61; --red: #b31f1a; }
   body { margin: 0; background: var(--paper); color: var(--ink);
@@ -15,12 +25,22 @@
   p, li { margin: 0 0 12px; }
   .meta { color: var(--faded); font-size: 13px; }
   a { color: var(--red); }
+  html[data-lang="es"] .l[lang="en"], html[data-lang="en"] .l[lang="es"] { display: none; }
+  .langs { display: flex; justify-content: flex-end; gap: 4px; margin-bottom: 16px; }
+  .langs button { font: inherit; font-size: 13px; padding: 4px 10px; border: 1px solid var(--ink); background: transparent; color: inherit; border-radius: 4px; cursor: pointer; }
+  .langs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 </style>
 </head>
 <body>
 <main>
+  <nav class="langs" aria-label="Idioma / Language">
+    <button type="button" data-set="es" lang="es">ES</button>
+    <button type="button" data-set="en" lang="en">EN</button>
+  </nav>
   <h1>Acta: Interrogatorios</h1>
   <div class="bar"></div>
+
+  <div class="l" lang="es">
   <p class="meta">Política de privacidad · Techito Games · Última actualización: 27 de septiembre de 2026</p>
 
   <h2>En resumen</h2>
@@ -44,6 +64,47 @@
 
   <h2>Contacto</h2>
   <p>Por cualquier consulta sobre privacidad: <a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></p>
+  </div>
+
+  <div class="l" lang="en">
+  <p class="meta">Privacy policy · Techito Games · Last updated: September 27, 2026</p>
+
+  <h2>In short</h2>
+  <p>Acta: Interrogatorios does not collect, store on servers or share any personal data. It has no accounts, ads, analytics or tracking.</p>
+
+  <h2>What is stored and where</h2>
+  <p>So you can pick up a case where you left off, the app saves your progress (contradictions found, documents read, notes you write and results) only on your device, using iOS local storage. That information never leaves the device and we have no access to it.</p>
+  <p>If you delete the app, that progress is deleted with it. If you have iCloud Backup turned on, iOS may include it in your backup as with any other app; that backup is managed by Apple under its own policy.</p>
+
+  <h2>Internet connection</h2>
+  <p>The app works offline. It does not communicate with any server.</p>
+
+  <h2>Third-party services</h2>
+  <p>The app does not include any third-party advertising, analytics or tracking libraries or services.</p>
+
+  <h2>Children</h2>
+  <p>Since we do not collect data from anyone, we do not collect data from children either.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, we will publish the new version on this same page with its update date.</p>
+
+  <h2>Contact</h2>
+  <p>For any privacy question: <a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></p>
+  </div>
 </main>
+<script>
+  (function () {
+    var root = document.documentElement, btns = document.querySelectorAll('[data-set]');
+    function set(l, save) {
+      root.setAttribute('data-lang', l);
+      root.lang = l;
+      document.title = root.getAttribute('data-title-' + l);
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === l)); });
+      if (save) { try { localStorage.setItem('lang', l); } catch (e) {} }
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.getAttribute('data-set'), true); }); });
+    set(root.getAttribute('data-lang'), false);
+  })();
+</script>
 </body>
 </html>

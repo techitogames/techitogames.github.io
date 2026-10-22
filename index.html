@@ -4,23 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Techito Games</title>
+<script>
+  // Idioma: ?lang=es|en, si no lo último elegido, si no el del navegador.
+  (function () {
+    var ok = { es: 1, en: 1 }, q = new URLSearchParams(location.search).get('lang'), s = null;
+    try { s = localStorage.getItem('lang'); } catch (e) {}
+    var l = ok[q] ? q : ok[s] ? s : (navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.lang = l;
+  })();
+</script>
 <style>
   body { margin: 0; background: #f6f1e4; color: #211f1c; font: 16px/1.6 ui-monospace, Menlo, monospace; }
   main { max-width: 640px; margin: 0 auto; padding: 48px 20px; }
   h1 { font-family: Georgia, serif; font-weight: 400; }
   a { color: #b31f1a; }
+  html[data-lang="es"] .l[lang="en"], html[data-lang="en"] .l[lang="es"] { display: none; }
+  .langs { display: flex; justify-content: flex-end; gap: 4px; }
+  .langs button { font: inherit; font-size: 13px; padding: 4px 10px; border: 1px solid #211f1c; background: transparent; color: inherit; border-radius: 4px; cursor: pointer; }
+  .langs button[aria-pressed="true"] { background: #211f1c; color: #f6f1e4; }
 </style>
 </head>
 <body>
 <main>
+  <nav class="langs" aria-label="Idioma / Language">
+    <button type="button" data-set="es" lang="es">ES</button>
+    <button type="button" data-set="en" lang="en">EN</button>
+  </nav>
   <h1>Techito Games</h1>
   <h2>Acta: Interrogatorios</h2>
-  <p><a href="acta/privacidad.html">Política de privacidad</a></p>
+  <p><a href="acta/privacidad.html"><span class="l" lang="es">Política de privacidad</span><span class="l" lang="en">Privacy policy</span></a></p>
   <h2>TidyCarpet</h2>
-  <p><a href="tidycarpet/privacidad.html">Política de privacidad</a></p>
+  <p><a href="tidycarpet/privacidad.html"><span class="l" lang="es">Política de privacidad</span><span class="l" lang="en">Privacy policy</span></a></p>
   <h2>Yoruguayero</h2>
-  <p><a href="yoruguayero/privacidad.html">Política de privacidad y soporte</a></p>
-  <p>Contacto: <a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></p>
+  <p><a href="yoruguayero/privacidad.html"><span class="l" lang="es">Política de privacidad y soporte</span><span class="l" lang="en">Privacy policy and support</span></a></p>
+  <p><span class="l" lang="es">Contacto:</span><span class="l" lang="en">Contact:</span> <a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></p>
 </main>
+<script>
+  (function () {
+    var root = document.documentElement, btns = document.querySelectorAll('[data-set]');
+    function set(l, save) {
+      root.setAttribute('data-lang', l);
+      root.lang = l;
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === l)); });
+      // Los enlaces internos llevan el idioma elegido.
+      document.querySelectorAll('a[href$=".html"]').forEach(function (a) {
+        a.href = a.getAttribute('href').split('?')[0] + '?lang=' + l;
+      });
+      if (save) { try { localStorage.setItem('lang', l); } catch (e) {} }
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.getAttribute('data-set'), true); }); });
+    set(root.getAttribute('data-lang'), false);
+  })();
+</script>
 </body>
 </html>

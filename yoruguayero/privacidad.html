@@ -1,12 +1,24 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-title-es="Yoruguayero — Privacidad y soporte" data-title-en="Yoruguayero — Privacy and support">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yoruguayero — Privacidad y soporte</title>
-<meta name="description" content="Política de privacidad y soporte de Yoruguayero, juego de Techito Games.">
+<meta name="description" content="Política de privacidad y soporte de Yoruguayero, juego de Techito Games. / Privacy policy and support for Yoruguayero, a game by Techito Games.">
 <!-- Va en GitHub Pages de la organización techitogames como yoruguayero/privacidad.html
      (https://techitogames.github.io/yoruguayero/privacidad.html). Fuente: docs/app-store/privacidad.md. -->
+<script>
+  // Idioma: ?lang=es|en, si no lo último elegido, si no el del navegador.
+  // #english (enlace viejo al resumen en inglés) abre la versión en inglés.
+  (function () {
+    var ok = { es: 1, en: 1 }, q = new URLSearchParams(location.search).get('lang'), s = null;
+    if (location.hash === '#english') q = 'en';
+    try { s = localStorage.getItem('lang'); } catch (e) {}
+    var l = ok[q] ? q : ok[s] ? s : (navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.lang = l;
+  })();
+</script>
 <style>
   :root { color-scheme: light dark; --fondo: #ffffff; --texto: #1b1f24; --tenue: #57606a; --borde: #d8dee4; --acento: #0b6bcb; }
   @media (prefers-color-scheme: dark) { :root { --fondo: #0e1116; --texto: #e6edf3; --tenue: #9aa4ad; --borde: #30363d; --acento: #58a6ff; } }
@@ -19,14 +31,30 @@
   li { margin: .25rem 0; }
   a { color: var(--acento); overflow-wrap: anywhere; }
   .fecha { color: var(--tenue); margin-bottom: 1.5rem; }
-  .en { color: var(--tenue); font-size: .95rem; }
+  html[data-lang="es"] .l[lang="en"], html[data-lang="en"] .l[lang="es"] { display: none; }
+  .langs { display: flex; justify-content: flex-end; gap: 4px; margin-bottom: 12px; }
+  .langs button { font: inherit; font-size: .85rem; padding: 3px 12px; border: 1px solid var(--borde); background: transparent; color: var(--texto); border-radius: 6px; cursor: pointer; }
+  .langs button[aria-pressed="true"] { background: var(--acento); border-color: var(--acento); color: var(--fondo); }
 </style>
 </head>
 <body>
+<nav class="langs" aria-label="Idioma / Language">
+  <button type="button" data-set="es" lang="es">ES</button>
+  <button type="button" data-set="en" lang="en">EN</button>
+</nav>
+
+<div class="l" lang="es">
 <h1>Yoruguayero — Privacidad y soporte</h1>
 <p class="fecha">Última actualización: 10 de octubre de 2026</p>
+</div>
+<div class="l" lang="en">
+<h1>Yoruguayero — Privacy and support</h1>
+<p class="fecha">Last updated: October 10, 2026</p>
+</div>
 
-<h2 id="privacidad">Política de privacidad</h2>
+<section id="privacidad">
+<div class="l" lang="es">
+<h2>Política de privacidad</h2>
 
 <h3>Lo corto</h3>
 <p>Yoruguayero es un juego de Techito Games que se juega sin conexión. Tu partida se guarda únicamente en tu propio teléfono o tablet: no hay cuentas, no hay perfiles y no tenemos servidores que reciban tus datos. El juego es gratis y muestra <strong>anuncios de Google AdMob</strong>; para eso, Google recopila algunos datos del dispositivo, como se explica abajo. Nosotros no recibimos ni guardamos datos personales tuyos.</p>
@@ -77,8 +105,66 @@
 
 <h3>Contacto</h3>
 <p>Para preguntas sobre privacidad, escribinos a: <strong><a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></strong></p>
+</div>
 
-<h2 id="soporte">Soporte</h2>
+<div class="l" lang="en">
+<h2>Privacy policy</h2>
+
+<h3>The short version</h3>
+<p>Yoruguayero is a game by Techito Games that is played offline. Your save is stored only on your own phone or tablet: there are no accounts, no profiles and we have no servers that receive your data. The game is free and shows <strong>Google AdMob ads</strong>; for that, Google collects some device data, as explained below. We do not receive or store any of your personal data.</p>
+
+<h3>What the game stores</h3>
+<p>Yoruguayero saves your career progress (your player, their stats, decisions and results) <strong>only in your device's local storage</strong>. That information never leaves your phone or tablet: we do not upload it to any server, we do not share it with anyone and we do not see it.</p>
+<p>You do not need to create an account or sign in to play. The game works fully without an internet connection (offline, ads simply do not appear).</p>
+
+<h3>Ads (Google AdMob)</h3>
+<p>The game shows full-screen ads from <strong>Google AdMob</strong>, a service of Google LLC. Ads are limited to content suitable for ages 13 and up.</p>
+<p>To show ads, measure them and prevent fraud, the Google Mobile Ads SDK included in the app collects and sends to Google:</p>
+<ul>
+  <li><strong>Approximate location</strong>, estimated from the IP address (never precise location or GPS).</li>
+  <li><strong>Device identifiers</strong>: Apple's advertising identifier (<strong>IDFA</strong>) <strong>only if you allow it</strong> in the iOS tracking prompt, and other app or device identifiers that do not identify you by name.</li>
+  <li><strong>Usage and advertising data</strong>: which ads were shown, when, and whether you tapped any.</li>
+  <li><strong>Diagnostic and performance data</strong> from the SDK (for example, load times or crashes), and technical device information (model, iOS version, language).</li>
+</ul>
+<p>We do not have access to that data in a way that identifies you: we only see aggregate statistics (how many ads were shown, for example). Google processes that data under its own privacy policy:</p>
+<ul>
+  <li>Google Privacy Policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+  <li>How Google uses information from apps that use its services: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></li>
+  <li>How Google uses data in advertising: <a href="https://policies.google.com/technologies/ads">policies.google.com/technologies/ads</a></li>
+</ul>
+
+<h3>Tracking (App Tracking Transparency) and personalized ads</h3>
+<p>The first time you open the game, iOS asks whether you allow the app to track you. <strong>If you say yes</strong>, Google may use the IDFA to show you personalized ads based on your activity in other apps and websites. <strong>If you say no</strong>, the IDFA is not shared and ads are <strong>non-personalized</strong> (based only on context, such as country or language). The game works exactly the same either way.</p>
+<p>You can change your answer at any time in <strong>Settings → Privacy &amp; Security → Tracking → Yoruguayero</strong> (or turn off the request for all apps from the same place).</p>
+
+<h3>Consent in the European Economic Area, the United Kingdom and Switzerland</h3>
+<p>If you are in the EEA, the UK or Switzerland, before requesting any ad the game shows you Google's consent form, where you choose whether you accept the use of your data for personalized advertising (or no personalization). You can change that choice at any time from the game's <strong>⋯</strong> menu → <strong>Opciones de privacidad de anuncios</strong> (ad privacy options).</p>
+
+<h3>How to revoke or limit</h3>
+<ul>
+  <li><strong>Tracking:</strong> Settings → Privacy &amp; Security → Tracking → Yoruguayero (off).</li>
+  <li><strong>European consent:</strong> the game's ⋯ menu → Opciones de privacidad de anuncios (ad privacy options).</li>
+  <li><strong>Google ad personalization in general:</strong> <a href="https://myadcenter.google.com">myadcenter.google.com</a>.</li>
+  <li><strong>Delete everything the game stores:</strong> delete the app from your device. To ask Google for access to or deletion of the data its SDK collected, use the tools in its privacy policy (link above).</li>
+</ul>
+
+<h3>How to view this policy from the game</h3>
+<p>Inside the game, the <strong>⋯</strong> menu (top right) has the <strong>Privacidad</strong> (Privacy) option, which opens this page. There is also a "Privacidad" link at the bottom of the player creation screen.</p>
+
+<h3>Children</h3>
+<p>Yoruguayero is intended for ages 13 and up and is not directed to children. Ads are limited to content suitable for teens (Google's "T" rating). We do not knowingly collect data from children under 13.</p>
+
+<h3>Changes to this policy</h3>
+<p>If this policy changes, we update the "last updated" date above and publish the new version on this same page.</p>
+
+<h3>Contact</h3>
+<p>For privacy questions, write to us at: <strong><a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></strong></p>
+</div>
+</section>
+
+<section id="soporte">
+<div class="l" lang="es">
+<h2>Soporte</h2>
 
 <h3>¿Se pierde mi partida si borro la app?</h3>
 <p>Probablemente sí. La partida se guarda sólo en tu dispositivo (no tenemos servidores ni cuentas), así que borrar la app borra también tu carrera guardada. Una copia de seguridad de iCloud o de tu dispositivo puede, según cómo la tengas configurada, devolver los datos de la app al restaurarla o al pasar a un teléfono nuevo, pero eso depende de iOS y no lo podemos garantizar.</p>
@@ -91,11 +177,38 @@
 
 <h3>Tengo un problema o una idea para el juego. ¿Cómo contacto?</h3>
 <p>Escribinos a: <strong><a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></strong></p>
-
-<h2 id="english" lang="en">English summary</h2>
-<div lang="en" class="en">
-<p><strong>Privacy.</strong> Yoruguayero is an offline football career game by Techito Games. There are no user accounts. Your save data is stored <strong>only locally on your device</strong> and is never uploaded to any server we control. The game is free and shows <strong>Google AdMob</strong> interstitial ads (limited to Teen-rated content). To serve and measure ads, the Google Mobile Ads SDK collects approximate location (from the IP address), device identifiers (the IDFA <strong>only if you allow tracking</strong> in the iOS App Tracking Transparency prompt), ad interaction and advertising data, and diagnostic/performance data. If you decline tracking, ads are non-personalized and the game works the same. You can change this in Settings → Privacy &amp; Security → Tracking. Users in the EEA, UK and Switzerland are shown Google's consent form before any ad is requested and can change their choice from the in-game ⋯ menu → "Opciones de privacidad de anuncios". We do not receive personal data; Google processes this data under its own policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> and <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>. The app is intended for ages 13 and up and is not directed to children.</p>
-<p><strong>Support.</strong> Deleting the app deletes your saved career from the device (we keep no server copy or account; an iCloud or device backup may restore app data depending on your settings). To start over, use "Nueva carrera" (New career) in the in-game menu. All names are fictional parodies. The game is not affiliated with or endorsed by any player, club, league, federation or brand. For questions, contact <strong><a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></strong>.</p>
 </div>
+
+<div class="l" lang="en">
+<h2>Support</h2>
+
+<h3>Will I lose my save if I delete the app?</h3>
+<p>Probably yes. Your save is stored only on your device (we have no servers or accounts), so deleting the app also deletes your saved career. An iCloud or device backup may, depending on how you have it set up, bring the app's data back when you restore it or move to a new phone, but that depends on iOS and we cannot guarantee it.</p>
+
+<h3>How do I start over?</h3>
+<p>Inside the game, open the menu (the three dots at the top right) and choose "Nueva carrera" (New career). It will ask you to confirm before deleting the current career — once confirmed it cannot be undone.</p>
+
+<h3>Does the game use real names of players, clubs or leagues?</h3>
+<p>No. All names are fictional parodies. The game is not affiliated with or endorsed by any player, club, league, federation or brand.</p>
+
+<h3>I have a problem or an idea for the game. How do I get in touch?</h3>
+<p>Write to us at: <strong><a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></strong></p>
+</div>
+</section>
+
+<script>
+  (function () {
+    var root = document.documentElement, btns = document.querySelectorAll('[data-set]');
+    function set(l, save) {
+      root.setAttribute('data-lang', l);
+      root.lang = l;
+      document.title = root.getAttribute('data-title-' + l);
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === l)); });
+      if (save) { try { localStorage.setItem('lang', l); } catch (e) {} }
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.getAttribute('data-set'), true); }); });
+    set(root.getAttribute('data-lang'), false);
+  })();
+</script>
 </body>
 </html>

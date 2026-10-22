@@ -1,10 +1,20 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-title-es="TidyCarpet · Política de privacidad" data-title-en="TidyCarpet · Privacy policy">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TidyCarpet · Política de privacidad</title>
-<meta name="description" content="Qué datos usa TidyCarpet, el juego de limpiar alfombras de Techito Games, y para qué.">
+<meta name="description" content="Qué datos usa TidyCarpet, el juego de limpiar alfombras de Techito Games, y para qué. / What data TidyCarpet, the carpet-cleaning game by Techito Games, uses and why.">
+<script>
+  // Idioma: ?lang=es|en, si no lo último elegido, si no el del navegador.
+  (function () {
+    var ok = { es: 1, en: 1 }, q = new URLSearchParams(location.search).get('lang'), s = null;
+    try { s = localStorage.getItem('lang'); } catch (e) {}
+    var l = ok[q] ? q : ok[s] ? s : (navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.lang = l;
+  })();
+</script>
 <style>
   :root { --bg: #2b2119; --card: #f3ead9; --ink: #2b2119; --mustard: #e8ac3c; --muted: #6b5e4e; }
   body { margin: 0; background: var(--bg); font-family: -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); line-height: 1.55; }
@@ -18,15 +28,27 @@
   a { color: #8a5a1a; }
   .lang { font-size: 14px; }
   .muted { color: var(--muted); font-size: 14px; }
+  html[data-lang="es"] .l[lang="en"], html[data-lang="en"] .l[lang="es"] { display: none; }
+  header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .langs { display: flex; gap: 4px; flex-shrink: 0; margin-top: 4px; }
+  .langs button { font: inherit; font-size: 14px; font-weight: 600; padding: 4px 12px; border: 2px solid var(--mustard); background: transparent; color: var(--mustard); border-radius: 999px; cursor: pointer; }
+  .langs button[aria-pressed="true"] { background: var(--mustard); color: var(--bg); }
 </style>
 </head>
 <body>
 <main>
   <header>
-    <h1>TidyCarpet</h1>
-    <p>Política de privacidad</p>
+    <div>
+      <h1>TidyCarpet</h1>
+      <p><span class="l" lang="es">Política de privacidad</span><span class="l" lang="en">Privacy policy</span></p>
+    </div>
+    <nav class="langs" aria-label="Idioma / Language">
+      <button type="button" data-set="es" lang="es">ES</button>
+      <button type="button" data-set="en" lang="en">EN</button>
+    </nav>
   </header>
-  <div class="card">
+
+  <div class="card l" lang="es">
     <p class="muted">Última actualización: 10 de octubre de 2026</p>
 
     <h2>Quiénes somos</h2>
@@ -72,6 +94,67 @@
     <h2>Contacto</h2>
     <p>Techito Games · <a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></p>
   </div>
+
+  <div class="card l" lang="en">
+    <p class="muted">Last updated: October 10, 2026</p>
+
+    <h2>Who we are</h2>
+    <p>TidyCarpet is a game by Techito Games. This page explains what data the app uses and why.</p>
+
+    <h2>What we store</h2>
+    <p>Nothing on our servers. TidyCarpet has no user accounts or sign-up: your games, language and volume settings are stored only on your device and are deleted when you uninstall the app. We do not use our own analytics tools and we do not collect your name, email, location or contacts.</p>
+
+    <h2>Rewarded ads</h2>
+    <p>The game shows video ads only when you choose to watch them in exchange for an in-game reward. They are served by <strong>Google AdMob</strong>. To do this, Google may receive and process data such as the device's advertising identifier, IP address, device model and operating system, and data about how you interact with the ads. How Google uses it is described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and in <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from sites or apps that use its services</a>.</p>
+    <ul>
+      <li><strong>European Union, European Economic Area, United Kingdom and Switzerland:</strong> before the first ad you are asked for consent through Google's form. You can change it at any time from Settings › Privacy inside the game.</li>
+      <li><strong>iOS:</strong> the system asks whether you allow tracking across apps. If you say no, you still see ads, but they are not personalized. You can change this in iPhone Settings › Privacy &amp; Security › Tracking.</li>
+      <li>Even if you never watch an ad, the app initializes the AdMob SDK when it opens so a video is ready; in that case the same technical data described above applies.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>TidyCarpet is not directed to children under 13 and is not in the App Store Kids category. Its App Store age rating is 4+ because it has no objectionable content, but the ads and data processing described above are intended for adults.</p>
+    <ul>
+      <li>We do not knowingly collect personal data from children under 13, in line with the US COPPA law.</li>
+      <li>In the European Union and the United Kingdom, consent to personalized ads is only valid from the age of digital consent (16, or the lower age set by each country under Article 8 of the GDPR). Without consent, Google only shows non-personalized ads.</li>
+      <li>If you are a minor, use the game under the supervision of a responsible adult.</li>
+      <li>If you believe a child was identified or tracked through the app, write to us: we do not store any data, and we will help you request deletion from Google using the links in the next section.</li>
+    </ul>
+
+    <h2>Your rights and applicable law</h2>
+    <p>Since we do not store any of your data, there is nothing we can access, correct or delete on our side: you control what is on your device. For the data Google processes, use the consent and tracking controls described above, <a href="https://adssettings.google.com/">Google's ad settings</a> or <a href="https://support.google.com/admob/answer/6128543">AdMob's data information</a>.</p>
+    <p>Techito Games is based in Uruguay and is governed by <a href="https://www.impo.com.uy/bases/leyes/18331-2008">Law 18.331 on Personal Data Protection</a>, supervised by the Personal Data Regulatory and Control Unit (URCDP). If you are in the European Union or the United Kingdom you keep all your GDPR rights (access, rectification, erasure, objection and portability) and can lodge a complaint with your data protection authority; if you are in Argentina, those under <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/60000-64999/64790/norma.htm">Law 25.326</a>. In every case you can write to us at the contact below.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, we update this page and the date above. Important changes are announced inside the game.</p>
+
+    <h2>References</h2>
+    <ul>
+      <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from sites or apps that use its services</a>.</li>
+      <li><a href="https://support.google.com/admob/answer/6128543">AdMob program policies</a> and <a href="https://support.google.com/admob/answer/7666366">EU user consent requirements</a>.</li>
+      <li><a href="https://support.apple.com/en-us/HT212025">Apple: if an app asks to track your activity</a> (App Tracking Transparency, iOS 14.5 or later).</li>
+      <li><a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-312">COPPA, Children's Online Privacy Protection Rule</a> (United States).</li>
+      <li><a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">Regulation (EU) 2016/679, GDPR</a>, Article 8 on children's consent.</li>
+      <li><a href="https://www.impo.com.uy/bases/leyes/18331-2008">Uruguay Law 18.331</a> and <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/60000-64999/64790/norma.htm">Argentina Law 25.326</a>.</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>Techito Games · <a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></p>
+  </div>
 </main>
+<script>
+  (function () {
+    var root = document.documentElement, btns = document.querySelectorAll('[data-set]');
+    function set(l, save) {
+      root.setAttribute('data-lang', l);
+      root.lang = l;
+      document.title = root.getAttribute('data-title-' + l);
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === l)); });
+      if (save) { try { localStorage.setItem('lang', l); } catch (e) {} }
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.getAttribute('data-set'), true); }); });
+    set(root.getAttribute('data-lang'), false);
+  })();
+</script>
 </body>
 </html>

@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="es" data-title-es="Acta: Interrogatorios · Política de privacidad" data-title-en="Acta: Interrogatorios · Privacy policy">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Acta: Interrogatorios · Política de privacidad</title>
+<title>El Fiscal · Privacidad / Privacy</title>
 <script>
-  // Idioma: ?lang=es|en, si no lo último elegido, si no el del navegador.
   (function () {
     var ok = { es: 1, en: 1 }, q = new URLSearchParams(location.search).get('lang'), s = null;
     try { s = localStorage.getItem('lang'); } catch (e) {}
@@ -22,88 +21,56 @@
   h1 { font-family: "American Typewriter", Georgia, serif; font-weight: 400; font-size: 34px; margin: 0; }
   .bar { width: 56px; height: 3px; background: var(--red); margin: 10px 0 28px; }
   h2 { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--faded); margin: 32px 0 6px; }
-  p, li { margin: 0 0 12px; }
+  p { margin: 0 0 12px; }
   .meta { color: var(--faded); font-size: 13px; }
   a { color: var(--red); }
   html[data-lang="es"] .l[lang="en"], html[data-lang="en"] .l[lang="es"] { display: none; }
-  .langs { display: flex; justify-content: flex-end; gap: 4px; margin-bottom: 16px; }
-  .langs button { font: inherit; font-size: 13px; padding: 4px 10px; border: 1px solid var(--ink); background: transparent; color: inherit; border-radius: 4px; cursor: pointer; }
-  .langs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+  .langs { display: flex; justify-content: flex-end; gap: 4px; }
+  .langs button { font: inherit; font-size: 13px; padding: 4px 10px; border: 1px solid #211f1c; background: transparent; color: inherit; border-radius: 4px; cursor: pointer; }
+  .langs button[aria-pressed="true"] { background: #211f1c; color: #f6f1e4; }
 </style>
 </head>
 <body>
 <main>
   <nav class="langs" aria-label="Idioma / Language">
-    <button type="button" data-set="es" lang="es">ES</button>
-    <button type="button" data-set="en" lang="en">EN</button>
+    <button type="button" data-set="es">ES</button>
+    <button type="button" data-set="en">EN</button>
   </nav>
-  <h1>Acta: Interrogatorios</h1>
+  <h1>El Fiscal: Casos de Acta</h1>
   <div class="bar"></div>
-
-  <div class="l" lang="es">
-  <p class="meta">Política de privacidad · Techito Games · Última actualización: 27 de septiembre de 2026</p>
-
-  <h2>En resumen</h2>
-  <p>Acta: Interrogatorios no recopila, no guarda en servidores ni comparte ningún dato personal. No tiene cuentas, anuncios, analíticas ni rastreo.</p>
-
-  <h2>Qué se guarda y dónde</h2>
-  <p>Para que puedas retomar un caso donde lo dejaste, la app guarda tu progreso (contradicciones encontradas, documentos leídos, notas que escribas y resultados) únicamente en tu dispositivo, usando el almacenamiento local de iOS. Esa información nunca sale del dispositivo y nosotros no tenemos acceso a ella.</p>
-  <p>Si borrás la app, ese progreso se borra con ella. Si tenés activadas las copias de seguridad de iCloud, iOS puede incluirlo en tu copia como con cualquier otra app; esa copia la gestiona Apple según su propia política.</p>
-
-  <h2>Conexión a internet</h2>
-  <p>La app funciona sin conexión. No se comunica con ningún servidor.</p>
-
-  <h2>Servicios de terceros</h2>
-  <p>La app no incluye bibliotecas ni servicios de terceros de publicidad, analítica o rastreo.</p>
-
-  <h2>Menores</h2>
-  <p>Como no recopilamos datos de nadie, tampoco recopilamos datos de menores.</p>
-
-  <h2>Cambios</h2>
-  <p>Si esta política cambia, vamos a publicar la nueva versión en esta misma página con su fecha de actualización.</p>
-
-  <h2>Contacto</h2>
-  <p>Por cualquier consulta sobre privacidad: <a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></p>
-  </div>
-
-  <div class="l" lang="en">
-  <p class="meta">Privacy policy · Techito Games · Last updated: September 27, 2026</p>
-
-  <h2>In short</h2>
-  <p>Acta: Interrogatorios does not collect, store on servers or share any personal data. It has no accounts, ads, analytics or tracking.</p>
-
-  <h2>What is stored and where</h2>
-  <p>So you can pick up a case where you left off, the app saves your progress (contradictions found, documents read, notes you write and results) only on your device, using iOS local storage. That information never leaves the device and we have no access to it.</p>
-  <p>If you delete the app, that progress is deleted with it. If you have iCloud Backup turned on, iOS may include it in your backup as with any other app; that backup is managed by Apple under its own policy.</p>
-
-  <h2>Internet connection</h2>
-  <p>The app works offline. It does not communicate with any server.</p>
-
-  <h2>Third-party services</h2>
-  <p>The app does not include any third-party advertising, analytics or tracking libraries or services.</p>
-
-  <h2>Children</h2>
-  <p>Since we do not collect data from anyone, we do not collect data from children either.</p>
-
-  <h2>Changes</h2>
-  <p>If this policy changes, we will publish the new version on this same page with its update date.</p>
-
-  <h2>Contact</h2>
-  <p>For any privacy question: <a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></p>
-  </div>
+  <p class="meta l" lang="es">Política de privacidad · Spino Games · Última actualización: 21 de noviembre de 2026</p>
+  <p class="meta l" lang="en">Privacy policy · Spino Games · Last updated: November 21, 2026</p>
+  <div class="l" lang="es"><h2>En resumen</h2><p>El Fiscal no tiene cuentas ni te pide datos personales. Para pagar los Fiscal Points (FP) podés mirar videos publicitarios opcionales: esos anuncios los muestra Google AdMob, que puede tratar algunos datos de tu dispositivo según se explica abajo. Nosotros no vendemos datos ni tenemos servidores propios donde guardarlos.</p></div>
+  <div class="l" lang="es"><h2>Qué se guarda y dónde</h2><p>Tu progreso (contradicciones encontradas, notas, resultados, estrellas y tu saldo de FP) se guarda en tu dispositivo. Si tenés iCloud activado, la app lo sincroniza con tu iCloud (almacenamiento clave-valor de Apple) para que puedas seguir en otro iPhone o iPad; podés apagarlo en Ajustes → Sincronizar con iCloud. Nosotros no tenemos acceso a esos datos: los gestiona Apple según su política.</p></div>
+  <div class="l" lang="es"><h2>Game Center</h2><p>Si iniciaste sesión en Game Center, la app envía a Apple tus logros y tu puntaje de estrellas para mostrarlos en tus tablas y logros. Eso lo gestiona Apple. Si no iniciaste sesión, no se envía nada.</p></div>
+  <div class="l" lang="es"><h2>Anuncios (Google AdMob)</h2><p>El Fiscal muestra un video publicitario solo cuando vos elegís mirarlo para ganar FP. Los anuncios los sirve Google AdMob. Para mostrarlos, Google puede recolectar y usar identificadores del dispositivo (por ejemplo, el identificador de publicidad si lo autorizaste), tu dirección IP aproximada, información del dispositivo y cómo interactuás con el anuncio, para entregar anuncios, medir su rendimiento y prevenir fraude. El Fiscal no usa tus datos para rastrearte entre apps de otras empresas y no solicita el permiso de seguimiento.</p></div>
+  <div class="l" lang="es"><h2>Consentimiento</h2><p>En los países donde la ley lo exige (Espacio Económico Europeo, Reino Unido y otros), al abrir la app Google te muestra un mensaje para que aceptes o rechaces el uso de tus datos con fines publicitarios. Podés cambiar tu elección cuando quieras en Ajustes → Opciones de privacidad. Más información: <a href="https://policies.google.com/privacy">política de privacidad de Google</a> y <a href="https://policies.google.com/technologies/partner-sites">cómo usa Google los datos de las apps que lo usan</a>.</p></div>
+  <div class="l" lang="es"><h2>Conexión a internet</h2><p>El juego funciona sin conexión. Se necesita internet solo para los anuncios, iCloud y Game Center.</p></div>
+  <div class="l" lang="es"><h2>Menores</h2><p>El Fiscal no está dirigido a menores de 13 años y no recopilamos a sabiendas datos de menores. Si sos madre, padre o tutor y creés que un menor nos dio datos, escribinos y los eliminamos.</p></div>
+  <div class="l" lang="es"><h2>Cambios</h2><p>Si esta política cambia, publicamos la nueva versión en esta misma página con su fecha.</p></div>
+  <div class="l" lang="es"><h2>Contacto</h2><p>Por cualquier consulta sobre privacidad: <a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></p></div>
+  <div class="l" lang="en"><h2>In short</h2><p>El Fiscal has no accounts and doesn't ask for personal data. To pay for Fiscal Points (FP) you can choose to watch optional rewarded videos: those ads are served by Google AdMob, which may process some device data as described below. We don't sell data and we have no servers of our own to store it.</p></div>
+  <div class="l" lang="en"><h2>What is stored and where</h2><p>Your progress (contradictions found, notes, results, stars and your FP balance) is stored on your device. If iCloud is on, the app syncs it to your iCloud (Apple key-value storage) so you can continue on another iPhone or iPad; you can turn this off in Settings → Sync with iCloud. We have no access to that data: Apple manages it under its own policy.</p></div>
+  <div class="l" lang="en"><h2>Game Center</h2><p>If you are signed in to Game Center, the app sends Apple your achievements and star score so they appear in your leaderboards and achievements. Apple manages that. If you are not signed in, nothing is sent.</p></div>
+  <div class="l" lang="en"><h2>Ads (Google AdMob)</h2><p>El Fiscal shows a rewarded video only when you choose to watch it to earn FP. Ads are served by Google AdMob. To show them, Google may collect and use device identifiers (for example the advertising identifier, if you allowed it), your approximate IP address, device information and how you interact with the ad, to deliver ads, measure their performance and prevent fraud. El Fiscal does not use your data to track you across other companies' apps and does not request tracking permission.</p></div>
+  <div class="l" lang="en"><h2>Consent</h2><p>Where the law requires it (European Economic Area, United Kingdom and others), Google shows you a message when you open the app so you can accept or refuse the use of your data for advertising. You can change your choice at any time in Settings → Privacy options. More information: <a href="https://policies.google.com/privacy">Google's privacy policy</a> and <a href="https://policies.google.com/technologies/partner-sites">how Google uses data from apps that use its services</a>.</p></div>
+  <div class="l" lang="en"><h2>Internet connection</h2><p>The game works offline. Internet is needed only for ads, iCloud and Game Center.</p></div>
+  <div class="l" lang="en"><h2>Children</h2><p>El Fiscal is not directed to children under 13 and we do not knowingly collect data from children. If you are a parent or guardian and believe a child gave us data, write to us and we will delete it.</p></div>
+  <div class="l" lang="en"><h2>Changes</h2><p>If this policy changes, we will publish the new version on this page with its date.</p></div>
+  <div class="l" lang="en"><h2>Contact</h2><p>For any privacy question: <a href="mailto:slltechitogames@gmail.com">slltechitogames@gmail.com</a></p></div>
 </main>
 <script>
   (function () {
-    var root = document.documentElement, btns = document.querySelectorAll('[data-set]');
-    function set(l, save) {
-      root.setAttribute('data-lang', l);
-      root.lang = l;
-      document.title = root.getAttribute('data-title-' + l);
-      btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === l)); });
-      if (save) { try { localStorage.setItem('lang', l); } catch (e) {} }
-    }
-    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.getAttribute('data-set'), true); }); });
-    set(root.getAttribute('data-lang'), false);
+    var root = document.documentElement;
+    function paint() { document.querySelectorAll('.langs button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.set === root.getAttribute('data-lang') ? 'true' : 'false'); }); }
+    document.querySelectorAll('.langs button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        root.setAttribute('data-lang', b.dataset.set); root.lang = b.dataset.set;
+        try { localStorage.setItem('lang', b.dataset.set); } catch (e) {}
+        paint();
+      });
+    });
+    paint();
   })();
 </script>
 </body>
